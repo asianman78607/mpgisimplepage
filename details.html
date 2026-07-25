@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" href="/resources/mgpi-logo.png">
+    <link rel="stylesheet" href="table.css">
+
+    <title>MCA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rebeccapurple;
+            background-image: url(/resources/back.jpg);
+            background-size: 100%;
+            display: flex;
+            flex-direction: column;
+
+            height: 100vh;
+            align-items: center;
+        }
+
+        #head {
+            background-color: aliceblue;
+            padding: 5px 10px;
+            margin-top: 10px;
+            border-radius: 6px;
+        }
+
+        #main {
+            border-radius: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            width: 70vw;
+            /* background-color: beige; */
+        }
+
+        #operations {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: aqua;
+            width: 90%;
+            height: 70%;
+        }
+
+       
+
+        #detail-btn:hover {
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <div id="head">
+        <h2>MPGI - MCA II (2025 - 27)</h2>
+    </div>
+    <div id="main">
+        <div id="operations">
+          <table id="studentTable">
+
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Roll No</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Phone</th>
+            <th>10%</th>
+            <th>10 Board</th>
+            <th>12%</th>
+            <th>12 Board</th>
+            <th>Course</th>
+            <th>Graduation %</th>
+            <th>University</th>
+            <th>Medium</th>
+            <th>CGPA-1</th>
+            <th>CGPA-2</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+    </tbody>
+
+</table>
+        </div>
+    </div>
+     <script src="studentdetails.js"></script>
+<script>
+
+const tbody = document.querySelector("#studentTable tbody");
+
+let rows = "";
+
+students.forEach(student => {
+
+    rows += `
+    <tr>
+        <td>${student.id}</td>
+        <td>${student.rollNo}</td>
+        <td>${student.name}</td>
+        <td>${student.gender}</td>
+        <td>${student.phone}</td>
+
+        <td>${student.tenthPercentage}</td>
+        <td>${student.tenthBoard}</td>
+
+        <td>${student.interPercentage}</td>
+        <td>${student.interBoard}</td>
+
+        <td>${student.course}</td>
+        <td>${student.graduationPercentage}</td>
+
+        <td>${student.university}</td>
+        <td>${student.medium}</td>
+
+        <td>${student.cgpa1}</td>
+        <td>${student.cgpa2}</td>
+    </tr>
+    `;
+
+});
+
+tbody.innerHTML = rows;</script>
+</body>
+
+</html>
