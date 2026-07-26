@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <link rel="icon" href="mgpi-logo.png">
+    <link rel="icon" href="/resources/mgpi-logo.png">
     <link rel="stylesheet" href="button.css">
     <title>MCA</title>
     <style>
@@ -11,49 +11,90 @@
             padding: 0;
         }
 
-        body {
-            background-color: rebeccapurple;
-            background-image: url(back.jpg);
-            background-size: 100%;
-            display: flex;
-            flex-direction: column;
+      body{
+    background: linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+                url(back.jpg);
+    background-size: cover;
+    background-position:center;
+    font-family:Poppins,sans-serif;
+}
 
-            height: 100vh;
-            align-items: center;
-        }
+#head{
+    margin-top:20px;
+    background:#ffffffee;
+    padding:12px 25px;
+    border-radius:10px;
+}
 
-        #head {
-            background-color: aliceblue;
-            padding: 5px 10px;
-            margin-top: 10px;
-            border-radius: 6px;
-        }
+#operations{
+    width:90%;
+    height:80%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(10px);
+    border-radius:18px;
+    padding:40px;
+    color:white;
+    box-shadow:0 15px 35px rgba(0,0,0,.3);
+}
 
-        #main {
-            border-radius: 6px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex: 1;
-            width: 70vw;
-            /* background-color: beige; */
-        }
+.left{
+    width:45%;
+}
 
-        #operations {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: aqua;
-            width: 90%;
-            height: 70%;
-        }
+.right{
+    width:45%;
+    display:flex;
+    justify-content:center;
+}
 
-       
+.logo{
+    width:90px;
+    margin-bottom:20px;
+}
 
-        #detail-btn:hover {
-            cursor: pointer;
-        }
-        
+.hero{
+    width:100%;
+    max-width:450px;
+}
+
+.left h1{
+    margin-bottom:15px;
+}
+
+.left p{
+    font-size:18px;
+    margin-bottom:35px;
+    line-height:1.7;
+}
+
+#functions{
+    background:none;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.menu-btn{
+    text-decoration:none;
+    color:white;
+    background:#1565c0;
+    padding:16px 25px;
+    border-radius:10px;
+    font-size:18px;
+    font-weight:600;
+    transition:.25s;
+    display:inline-block;
+    width:260px;
+}
+
+.menu-btn:hover{
+    background:#ff9800;
+    color:black;
+    transform:translateX(8px);
+}
     </style>
 </head>
 
@@ -62,14 +103,40 @@
     <div id="head">
         <h2>MPGI - MCA II (2025 - 27)</h2>
     </div>
-    <div id="main">
-        <div id="operations">
-            <button>
-                <span class="text"><a href="details.html">Details</a></span>
-            </button>
-            
+   <div id="main">
+
+    <div id="operations">
+
+        <div class="left">
+
+            <img src="mgpi-logo.png" class="logo">
+
+            <h1>Master of Computer Applications</h1>
+
+            <p>
+                MCA Batch 2025–2027<br>
+                Maharana Pratap Group of Institutions
+            </p>
+
+            <div id="functions">
+
+                <a href="details.html" class="menu-btn">📋 Student Details</a>
+
+                <a href="weekly_timetable.html" class="menu-btn">📅 Weekly Timetable</a>
+             <a href="subjects.html" class="menu-btn">📚 Syllabus</a>
+
+
+            </div>
+
         </div>
+
+        <div class="right">
+            <img src="dis.jpg" class="hero">
+        </div>
+
     </div>
+
+</div>
 
 </body>
 

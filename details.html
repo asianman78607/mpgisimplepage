@@ -1,136 +1,460 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <link rel="icon" href="mgpi-logo.png">
-    <link rel="stylesheet" href="table.css">
 
-    <title>MCA</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>MCA Student Details</title>
+
+    <link rel="icon" href="/resources/mgpi-logo.png">
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
         }
 
-        body {
-            background-color: rebeccapurple;
-            background-image: url(back.jpg);
-            background-size: 100%;
-            display: flex;
-            flex-direction: column;
+        body{
 
-            height: 100vh;
-            align-items: center;
+            background:
+            linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+            url("back.jpg");
+
+            background-size:cover;
+            background-position:center;
+            background-attachment:fixed;
+
+            min-height:100vh;
         }
 
-        #head {
-            background-color: aliceblue;
-            padding: 5px 10px;
-            margin-top: 10px;
-            border-radius: 6px;
+        /* ---------------- Header ---------------- */
+
+        #head{
+
+            width:95%;
+            margin:20px auto;
+
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+
+            padding:18px 25px;
+
+            border-radius:15px;
+
+            background:rgba(255,255,255,.92);
+
+            box-shadow:
+            0 10px 30px rgba(0,0,0,.35);
         }
 
-        #main {
-            border-radius: 6px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex: 1;
-            width: 70vw;
-            /* background-color: beige; */
+        #head h2{
+
+            color:#0d47a1;
+            font-size:28px;
+            font-weight:700;
         }
 
-        #operations {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: aqua;
-            width: 90%;
-            height: 70%;
+        #homeBtn{
+
+            padding:11px 20px;
+
+            border:none;
+            border-radius:8px;
+
+            background:#1565c0;
+            color:white;
+
+            cursor:pointer;
+
+            font-size:15px;
+            font-weight:600;
+
+            transition:.3s;
         }
 
-       
+        #homeBtn:hover{
 
-        #detail-btn:hover {
-            cursor: pointer;
+            background:#ff9800;
+            color:black;
+
+            transform:translateY(-2px);
         }
-        
+
+        /* ---------------- Card ---------------- */
+
+        .container{
+
+            width:95%;
+            margin:auto;
+
+            background:rgba(255,255,255,.12);
+
+            backdrop-filter:blur(15px);
+
+            border-radius:18px;
+
+            padding:25px;
+
+            box-shadow:
+            0 12px 35px rgba(0,0,0,.35);
+        }
+
+        .topBar{
+
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+
+            flex-wrap:wrap;
+            gap:15px;
+
+            margin-bottom:20px;
+        }
+
+        .title{
+
+            color:white;
+            font-size:28px;
+            font-weight:700;
+        }
+
+        .search{
+
+            width:320px;
+            max-width:100%;
+
+            padding:12px 16px;
+
+            border:none;
+            border-radius:40px;
+
+            outline:none;
+
+            font-size:15px;
+        }
+
+        /* ---------------- Table ---------------- */
+
+        .tableContainer{
+
+            overflow:auto;
+            border-radius:12px;
+        }
+
+        table{
+
+            width:100%;
+            min-width:1600px;
+
+            border-collapse:collapse;
+
+            background:white;
+        }
+
+        thead{
+
+            position:sticky;
+            top:0;
+            z-index:10;
+        }
+
+        thead tr{
+
+            background:#1565c0;
+        }
+
+        thead th{
+
+            color:white;
+
+            padding:16px;
+
+            text-align:center;
+
+            white-space:nowrap;
+
+            font-size:14px;
+            letter-spacing:.5px;
+        }
+
+        tbody td{
+
+            padding:14px;
+
+            text-align:center;
+
+            border-bottom:1px solid #eee;
+
+            transition:.25s;
+        }
+
+        tbody tr:nth-child(even){
+
+            background:#f7f9fc;
+        }
+
+        tbody tr:hover{
+
+            background:#e3f2fd;
+
+            transform:scale(1.003);
+        }
+
+        /* Name */
+
+        .studentName{
+
+            font-weight:700;
+            color:#0d47a1;
+            font-size:15px;
+        }
+
+        /* Gender */
+
+        .male{
+
+            background:#2196f3;
+            color:white;
+            padding:5px 12px;
+            border-radius:30px;
+            font-weight:600;
+        }
+
+        .female{
+
+            background:#e91e63;
+            color:white;
+            padding:5px 12px;
+            border-radius:30px;
+            font-weight:600;
+        }
+
+        /* Percentage */
+
+        .percent{
+
+            font-weight:bold;
+            color:#2e7d32;
+            font-size:15px;
+        }
+
+        /* CGPA */
+
+        .cgpa{
+
+            color:#6a1b9a;
+            font-weight:700;
+        }
+
+        /* Phone */
+
+        .phone{
+
+            color:#555;
+        }
+
+        /* Scroll */
+
+        ::-webkit-scrollbar{
+
+            height:10px;
+            width:10px;
+        }
+
+        ::-webkit-scrollbar-thumb{
+
+            background:#1565c0;
+            border-radius:20px;
+        }
+
+        /* Mobile */
+
+        @media(max-width:800px){
+
+            #head{
+
+                flex-direction:column;
+                gap:15px;
+                text-align:center;
+            }
+
+            .topBar{
+
+                flex-direction:column;
+            }
+
+            .search{
+
+                width:100%;
+            }
+
+            .title{
+
+                font-size:24px;
+            }
+
+        }
+
     </style>
+
 </head>
 
 <body>
 
     <div id="head">
-        <h2>MPGI - MCA II (2025 - 27)</h2>
+
+        <h2>🎓 MPGI - MCA II (2025-2027)</h2>
+
+        <button id="homeBtn"
+            onclick="location.href='index.html'">
+
+            🏠 Home
+
+        </button>
+
     </div>
-    <div id="main">
-        <div id="operations">
-          <table id="studentTable">
 
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Roll No</th>
-            <th>Name</th>
-            <th>Gender</th>
-            <th>Phone</th>
-            <th>10%</th>
-            <th>10 Board</th>
-            <th>12%</th>
-            <th>12 Board</th>
-            <th>Course</th>
-            <th>Graduation %</th>
-            <th>University</th>
-            <th>Medium</th>
-            <th>CGPA-1</th>
-            <th>CGPA-2</th>
-        </tr>
-    </thead>
+    <div class="container">
 
-    <tbody>
+        <div class="topBar">
 
-    </tbody>
+            <div class="title">
+                📋 Student Details
+            </div>
 
-</table>
+            <input
+                type="text"
+                id="search"
+                class="search"
+                placeholder="🔍 Search Student...">
+
         </div>
+
+        <div class="tableContainer">
+
+            <table id="studentTable">
+
+                <thead>
+
+                    <tr>
+
+                        <th>#</th>
+                        <th>Roll No</th>
+                        <th>Student Name</th>
+                        <th>Gender</th>
+                        <th>Phone</th>
+                        <th>10%</th>
+                        <th>10 Board</th>
+                        <th>12%</th>
+                        <th>12 Board</th>
+                        <th>Graduation</th>
+                        <th>Grad %</th>
+                        <th>University</th>
+                  
+                        <th>CGPA-I</th>
+                        <th>CGPA-II</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody></tbody>
+
+            </table>
+
+        </div>
+
     </div>
-     <script src="studentdetails.js"></script>
-<script>
 
-const tbody = document.querySelector("#studentTable tbody");
+    <script src="studentdetails.js"></script>
 
-let rows = "";
+    <script>
 
-students.forEach(student => {
+        const tbody = document.querySelector("tbody");
 
-    rows += `
-    <tr>
-        <td>${student.id}</td>
-        <td>${student.rollNo}</td>
-        <td>${student.name}</td>
-        <td>${student.gender}</td>
-        <td>${student.phone}</td>
+        function render(data){
 
-        <td>${student.tenthPercentage}</td>
-        <td>${student.tenthBoard}</td>
+            tbody.innerHTML="";
 
-        <td>${student.interPercentage}</td>
-        <td>${student.interBoard}</td>
+            data.forEach((student,index)=>{
 
-        <td>${student.course}</td>
-        <td>${student.graduationPercentage}</td>
+                tbody.innerHTML+=`
 
-        <td>${student.university}</td>
-        <td>${student.medium}</td>
+                <tr>
 
-        <td>${student.cgpa1}</td>
-        <td>${student.cgpa2}</td>
-    </tr>
-    `;
+                    <td>${index+1}</td>
 
-});
+                    <td>${student.rollNo}</td>
 
-tbody.innerHTML = rows;</script>
+                    <td class="studentName">${student.name}</td>
+
+                    <td>
+
+                        <span class="${student.gender.toLowerCase()=="male"?"male":"female"}">
+
+                            ${student.gender}
+
+                        </span>
+
+                    </td>
+
+                    <td class="phone">${student.phone}</td>
+
+                    <td class="percent">${student.tenthPercentage}</td>
+
+                    <td>${student.tenthBoard}</td>
+
+                    <td class="percent">${student.interPercentage}</td>
+
+                    <td>${student.interBoard}</td>
+
+                    <td>${student.course}</td>
+
+                    <td class="percent">${student.graduationPercentage}</td>
+
+                    <td>${student.university}</td>
+
+
+                    <td class="cgpa">${student.cgpa1}</td>
+
+                    <td class="cgpa">${student.cgpa2}</td>
+
+                </tr>
+
+                `;
+
+            });
+
+        }
+
+        render(students);
+
+        document.getElementById("search").addEventListener("keyup",function(){
+
+            const value=this.value.toLowerCase();
+
+            const filtered=students.filter(s=>
+
+                s.name.toLowerCase().includes(value) ||
+
+                s.rollNo.toString().includes(value) ||
+
+                s.phone.toString().includes(value)
+
+            );
+
+            render(filtered);
+
+        });
+
+    </script>
+
 </body>
 
 </html>
