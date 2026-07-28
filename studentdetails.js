@@ -14,7 +14,7 @@ const students = [
         "university": "CSJMU",
         "medium": "English",
         "cgpa1": 8.17,
-        "cgpa2": 8.43
+        "cgpa2": 8.43, "dob":"02-12-2006"
     },
     {
         "id": 2,
@@ -65,7 +65,7 @@ const students = [
         "university": "CSJMU",
         "medium": "ENGLISH",
         "cgpa1": 6.96,
-        "cgpa2": 7.65
+        "cgpa2": 7.65, "dob":"17-09-2001"
     },
     {
         "id": 5,
@@ -133,7 +133,7 @@ const students = [
         "university": "csjmu",
         "medium": "Regular English ",
         "cgpa1": 6.67,
-        "cgpa2": 8.26
+        "cgpa2": 8.26, "dob":"01-01-2006"
     },
     {
         "id": 9,
@@ -184,7 +184,7 @@ const students = [
         "university": "Asian International University",
         "medium": "Regular/English ",
         "cgpa1": 7.3,
-        "cgpa2": 7.83
+        "cgpa2": 7.83, "dob":"10-07-2005"
     },
     {
         "id": 12,
@@ -201,7 +201,7 @@ const students = [
         "university": "Symbiosis International University",
         "medium": "regular/english ",
         "cgpa1": 8,
-        "cgpa2": 7.78
+        "cgpa2": 7.78, "dob":"28-12-2003"
     },
     {
         "id": 13,
@@ -235,7 +235,7 @@ const students = [
         "university": "CSJMU",
         "medium": "Regular/English",
         "cgpa1": 8.52,
-        "cgpa2": 9
+        "cgpa2": 9, "dob":"24-04-2005"
     },
     {
         "id": 15,
@@ -252,7 +252,7 @@ const students = [
         "university": "BU jhanshi",
         "medium": "English",
         "cgpa1": 6.74,
-        "cgpa2": 8.57
+        "cgpa2": 8.57, "dob":"14-11-2003"
     },
     {
         "id": 16,
@@ -286,7 +286,7 @@ const students = [
         "university": "CSJMU",
         "medium": "English",
         "cgpa1": 7.04,
-        "cgpa2": 8.09
+        "cgpa2": 8.09, "dob":"30-11-2003"
     },
     {
         "id": 18,
@@ -320,7 +320,7 @@ const students = [
         "university": "CSJMU ",
         "medium": "English ",
         "cgpa1": 7,
-        "cgpa2": 8.43
+        "cgpa2": 8.43, "dob":"27-12-2006"
     },
     {
         "id": 20,
@@ -337,7 +337,7 @@ const students = [
         "university": "CSJMU ",
         "medium": "English",
         "cgpa1": 7.7,
-        "cgpa2": 9
+        "cgpa2": 9, "dob":"03-07-2005"
     },
     {
         "id": 21,
@@ -354,7 +354,7 @@ const students = [
         "university": "CSJMU",
         "medium": "ENGLISH",
         "cgpa1": 7.43,
-        "cgpa2": 7.84
+        "cgpa2": 7.84, "dob":"19-11-2003"
     },
     {
         "id": 22,
@@ -575,7 +575,7 @@ const students = [
         "university": "CSJMU",
         "medium": "Hindi/ Regular",
         "cgpa1": 6.57,
-        "cgpa2": 6.35
+        "cgpa2": 6.35, "dob":"15-12-2000"
     },
     {
         "id": 35,
@@ -677,7 +677,7 @@ const students = [
         "university": "CSJMU ",
         "medium": "English ",
         "cgpa1": 6.26,
-        "cgpa2": 6.87
+        "cgpa2": 6.87, "dob":"15-05-2004"
     },
     {
         "id": 41,
@@ -694,7 +694,7 @@ const students = [
         "university": "CSJMU ",
         "medium": "Hindi/Regular ",
         "cgpa1": 5.83,
-        "cgpa2": 5.35
+        "cgpa2": 5.35, "dob":"05-05-2003"
     },
     {
         "id": 42,
@@ -711,7 +711,7 @@ const students = [
         "university": "MCU",
         "medium": "English ",
         "cgpa1": 7.17,
-        "cgpa2": 7.91
+        "cgpa2": 7.91, "dob":"20-07-2004"
     },
     {
         "id": 43,
@@ -728,7 +728,7 @@ const students = [
         "university": "MCU ",
         "medium": "English ",
         "cgpa1": 7.83,
-        "cgpa2": 8.09
+        "cgpa2": 8.09, "dob":"25-09-2006"
     },
     {
         "id": 44,
@@ -847,7 +847,7 @@ const students = [
         "university": "csjmu",
         "medium": "English ",
         "cgpa1": 5.51,
-        "cgpa2": 5.3
+        "cgpa2": 5.3, "dob":"11-12-2004"
     },
     {
         "id": 51,

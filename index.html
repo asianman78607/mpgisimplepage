@@ -1,142 +1,923 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MCA ERP Portal</title>
+
     <link rel="icon" href="/resources/mgpi-logo.png">
-    <link rel="stylesheet" href="button.css">
-    <title>MCA</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
     <style>
         * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: Poppins, sans-serif;
         }
 
-      body{
-    background: linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+        body {
+
+            background:
+                linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .55)),
                 url(back.jpg);
-    background-size: cover;
-    background-position:center;
-    font-family:Poppins,sans-serif;
-}
 
-#head{
-    margin-top:20px;
-    background:#ffffffee;
-    padding:12px 25px;
-    border-radius:10px;
-}
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
 
-#operations{
-    width:90%;
-    height:80%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:rgba(255,255,255,.15);
-    backdrop-filter:blur(10px);
-    border-radius:18px;
-    padding:40px;
-    color:white;
-    box-shadow:0 15px 35px rgba(0,0,0,.3);
-}
+            color: white;
 
-.left{
-    width:45%;
-}
+            min-height: 100vh;
 
-.right{
-    width:45%;
-    display:flex;
-    justify-content:center;
-}
+        }
 
-.logo{
-    width:90px;
-    margin-bottom:20px;
-}
+        /* ================= HEADER ================= */
 
-.hero{
-    width:100%;
-    max-width:450px;
-}
+        #head {
 
-.left h1{
-    margin-bottom:15px;
-}
+            width: 94%;
+            margin: 20px auto;
 
-.left p{
-    font-size:18px;
-    margin-bottom:35px;
-    line-height:1.7;
-}
+            padding: 18px 25px;
 
-#functions{
-    background:none;
-    display:flex;
-    flex-direction:column;
-    gap:18px;
-}
+            border-radius: 15px;
 
-.menu-btn{
-    text-decoration:none;
-    color:white;
-    background:#1565c0;
-    padding:16px 25px;
-    border-radius:10px;
-    font-size:18px;
-    font-weight:600;
-    transition:.25s;
-    display:inline-block;
-    width:260px;
-}
+            background: rgba(255, 255, 255, .92);
 
-.menu-btn:hover{
-    background:#ff9800;
-    color:black;
-    transform:translateX(8px);
-}
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            box-shadow: 0 12px 30px rgba(0, 0, 0, .3);
+
+        }
+
+        #head h2 {
+
+            color: #1565c0;
+
+            margin-bottom: 5px;
+
+        }
+
+        #head p {
+
+            color: #555;
+
+        }
+
+        #clockBox {
+
+            text-align: right;
+
+        }
+
+        #liveTime {
+
+            font-size: 30px;
+
+            font-weight: bold;
+
+            color: #1565c0;
+
+        }
+
+        #liveDate {
+
+            color: #555;
+
+            margin-top: 5px;
+
+        }
+
+        /* ================= MAIN ================= */
+
+        #main {
+
+            width: 94%;
+
+            margin: 20px auto;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 35px;
+
+        }
+
+        .left {
+
+            width: 52%;
+
+        }
+
+        .right {
+
+            width: 48%;
+
+        }
+
+        /* ================= LOGO ================= */
+        .left,
+        .right {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo {
+
+            width: 90px;
+
+            margin-bottom: 18px;
+
+        }
+
+        .left h1 {
+
+            margin-bottom: 12px;
+
+        }
+
+        .left p {
+
+            color: #eee;
+
+            line-height: 1.7;
+
+            margin-bottom: 25px;
+
+        }
+
+        /* ================= DASHBOARD ================= */
+
+        #dashboard {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 15px;
+
+            margin-bottom: 30px;
+
+        }
+
+        .dashCard {
+
+            background: rgba(255, 255, 255, .14);
+
+            backdrop-filter: blur(10px);
+
+            border-radius: 12px;
+
+            padding: 20px;
+
+            text-align: center;
+
+            border: 2px solid transparent;
+
+            transition: .25s;
+
+        }
+
+        .dashCard:hover {
+
+            border-color: #ffb703;
+
+            transform: translateY(-4px);
+
+        }
+
+        .dashNumber {
+
+            font-size: 34px;
+
+            font-weight: 700;
+
+            color: #ffd166;
+
+        }
+
+        .dashTitle {
+
+            margin-top: 8px;
+
+        }
+
+
+        /* ================= MENU ================= */
+
+        #functions {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 18px;
+
+        }
+
+        .menu-btn {
+
+            text-decoration: none;
+
+            color: white;
+
+            background: #1565c0;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 18px 22px;
+
+            border-radius: 12px;
+
+            transition: .25s;
+
+            font-weight: 600;
+
+            font-size: 18px;
+
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .25);
+
+        }
+
+        .menu-btn:hover {
+
+            background: #ff9800;
+
+            color: black;
+
+            transform: translateX(8px);
+
+        }
+
+        /* ================= RIGHT ================= */
+
+        .hero {
+
+            width: 100%;
+
+            border-radius: 15px;
+
+            margin-bottom: 25px;
+
+            transition: .3s;
+
+        }
+
+        .hero:hover {
+
+            transform: scale(1.02);
+
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+
+            margin: 35px 0 20px;
+
+            text-align: center;
+
+            color: #ddd;
+
+        }
+
+        /* ================= BIRTHDAY POPUP ================= */
+
+        #birthdayPopup {
+
+
+            position: fixed;
+
+            inset: 0;
+
+            display: none;
+
+            justify-content: center;
+
+            align-items: center;
+
+            background: rgba(0, 0, 0, .75);
+
+            z-index: 999;
+
+
+        }
+
+        #popupCard {
+
+            background: white;
+
+            color: #222;
+
+            width: 420px;
+
+            max-width: 92%;
+
+            padding: 30px;
+
+            border-radius: 18px;
+
+            text-align: center;
+
+            animation: popup .35s;
+
+        }
+
+        @keyframes popup {
+
+            from {
+
+                transform: scale(.7);
+
+                opacity: 0;
+
+            }
+
+            to {
+
+                transform: scale(1);
+
+                opacity: 1;
+
+            }
+
+        }
+
+        #popupCard h1 {
+
+            color: #ff9800;
+
+        }
+
+        #birthdayName {
+
+            margin: 12px 0;
+
+            color: #1565c0;
+
+        }
+
+        #birthdayGif {
+
+            width: 100%;
+
+            border-radius: 12px;
+
+            margin: 15px 0;
+            max-height: 50vh;
+        }
+
+        #closePopup {
+
+            margin-top: 15px;
+
+            border: none;
+
+            background: #1565c0;
+
+            color: white;
+
+            padding: 12px 22px;
+
+            border-radius: 10px;
+
+            cursor: pointer;
+
+        }
+
+        #closePopup:hover {
+
+            background: #ff9800;
+
+            color: black;
+
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width:900px) {
+
+            #main {
+
+                flex-direction: column;
+
+            }
+
+            .left,
+            .right {
+
+                width: 100%;
+            }
+
+            #head {
+
+                flex-direction: column;
+
+                text-align: center;
+
+                gap: 15px;
+            }
+
+            #clockBox {
+
+                text-align: center;
+            }
+
+            #dashboard {
+
+                grid-template-columns: repeat(3, 1fr);
+
+                gap: 10px;
+            }
+
+            .dashCard {
+
+                padding: 15px 10px;
+            }
+
+            .dashNumber {
+
+                font-size: 24px;
+            }
+
+            .dashTitle {
+
+                font-size: 13px;
+            }
+
+            /* Order */
+
+            .right {
+
+                order: 1;
+            }
+
+            .left {
+
+                order: 2;
+            }
+
+            .hero {
+
+                order: 1;
+
+                margin-bottom: 15px;
+            }
+
+            #functions {
+
+                order: 2;
+
+                margin-bottom: 20px;
+            }
+
+            #quoteCard {
+
+                order: 3;
+
+                margin-bottom: 25px;
+            }
+
+            .logo {
+
+                order: 1;
+
+                margin: auto;
+
+                margin-bottom: 15px;
+            }
+
+            .left h1 {
+
+                order: 2;
+
+                text-align: center;
+            }
+
+            .left p {
+
+                order: 3;
+
+                text-align: center;
+            }
+
+            #dashboard {
+
+                order: 4;
+
+                margin-top: 15px;
+            }
+
+        }
     </style>
+
 </head>
 
 <body>
 
-    <div id="head">
-        <h2>MPGI - MCA II (2025 - 27)</h2>
+    <!-- ================= Header ================= -->
+
+    <header id="head">
+
+        <div>
+
+            <h2>🎓 MPGI - MCA ERP Portal</h2>
+
+            <p>MCA II (2025 - 2027)</p>
+
+        </div>
+
+        <div id="clockBox">
+
+            <div id="liveTime">00:00:00</div>
+
+            <div id="liveDate">Loading...</div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= Birthday Popup ================= -->
+
+    <div id="birthdayPopup">
+
+        <div id="popupCard">
+
+            <h1>🎉 Happy Birthday 🎂</h1>
+
+            <h2 id="birthdayName"></h2>
+
+            <img id="birthdayGif" src="birthday gif" alt="Birthday GIF">
+
+            <p>
+
+                Wishing you happiness, success and a wonderful year ahead.
+
+            </p>
+
+            <button id="closePopup">
+
+                Close
+
+            </button>
+
+        </div>
+
     </div>
-   <div id="main">
 
-    <div id="operations">
 
-        <div class="left">
+
+    <!-- ================= Main ================= -->
+
+    <main id="main">
+
+
+
+        <!-- Left Side -->
+
+        <section class="left">
+
+
 
             <img src="mgpi-logo.png" class="logo">
 
-            <h1>Master of Computer Applications</h1>
+
+
+            <h1>
+
+                Master of Computer Applications
+
+            </h1>
+
+
 
             <p>
-                MCA Batch 2025–2027<br>
+
                 Maharana Pratap Group of Institutions
+
+                <br>
+
+                MCA Batch 2025 – 2027
+
             </p>
 
-            <div id="functions">
 
-                <a href="details.html" class="menu-btn">📋 Student Details</a>
 
-                <a href="weekly_timetable.html" class="menu-btn">📅 Weekly Timetable</a>
-             <a href="subjects.html" class="menu-btn">📚 Syllabus</a>
+            <!-- Dashboard Cards -->
+
+            <div id="dashboard">
+
+
+
+                <div class="dashCard">
+
+                    <div class="dashNumber" id="studentCount">
+
+                        51
+
+                    </div>
+
+                    <div class="dashTitle">
+
+                        Students
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="dashCard">
+
+                    <div class="dashNumber">
+
+                        6
+
+                    </div>
+
+                    <div class="dashTitle">
+
+                        Subjects
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="dashCard">
+
+                    <div class="dashNumber">
+
+                        6
+
+                    </div>
+
+                    <div class="dashTitle">
+
+                        Working Days
+
+                    </div>
+
+                </div>
+
 
 
             </div>
 
-        </div>
 
-        <div class="right">
+
+
+
+
+            <!-- Menu -->
+
+            <div id="functions">
+
+
+
+                <a href="details.html" class="menu-btn">
+
+                    <span>
+
+                        👨‍🎓 Student Directory
+
+                    </span>
+
+                    <span>
+
+                        ➜
+
+                    </span>
+
+                </a>
+
+
+
+                <a href="weekly_timetable.html" class="menu-btn">
+
+                    <span>
+
+                        📅 Weekly Timetable
+
+                    </span>
+
+                    <span>
+
+                        ➜
+
+                    </span>
+
+                </a>
+
+
+
+                <a href="subjects.html" class="menu-btn">
+
+                    <span>
+
+                        📚 Syllabus
+
+                    </span>
+
+                    <span>
+
+                        ➜
+
+                    </span>
+
+                </a>
+
+
+
+            </div>
+
+
+
+        </section>
+
+
+
+        <!-- Right Side -->
+
+        <section class="right">
+
+
+
             <img src="dis.jpg" class="hero">
-        </div>
 
-    </div>
 
-</div>
+
+
+
+
+            <!-- Quote -->
+
+            <div id="quoteCard">
+
+                <h3>
+
+                    💡 Quote of the Day
+
+                </h3>
+
+                <p id="quote">
+
+                    Loading...
+
+                </p>
+
+            </div>
+
+
+
+        </section>
+
+
+
+    </main>
+
+
+
+    <footer>
+
+        Designed for MCA Department •
+
+        CSS By AI • Avnish Yadav
+
+    </footer>
+
+
+    <script src="studentdetails.js"></script>
+    <script>
+
+        /* ---------- STUDENT DATA ---------- */
+
+
+
+
+
+        /* ---------- LIVE CLOCK ---------- */
+
+        const timeEl = document.getElementById("liveTime");
+        const dateEl = document.getElementById("liveDate");
+
+        function updateClock() {
+
+            const now = new Date();
+            timeEl.textContent = now.toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit"
+            });
+
+            dateEl.textContent = now.toLocaleDateString("en-IN", {
+
+                weekday: "long",
+
+                day: "numeric",
+
+                month: "long",
+
+                year: "numeric"
+
+            });
+
+        }
+
+        updateClock();
+
+        setInterval(updateClock, 1000);
+
+
+
+        const quotes = [
+
+            "Success is the sum of small efforts repeated every day.",
+
+            "The expert in anything was once a beginner.",
+
+            "Stay curious. Keep learning.",
+
+            "Practice makes progress.",
+
+            "Dream big. Start small.",
+
+            "Consistency beats motivation."
+
+        ];
+        document.getElementById("quote").textContent =
+            quotes[Math.floor(Math.random() * quotes.length)];
+
+
+
+
+
+
+
+
+        const today = new Date();
+        const birthdayGifs = [
+            "g1.webp", "g2.gif", "g3.gif", "g4.gif",
+        ];
+
+        const day = String(today.getDate()).padStart(2, "0");
+        const month = String(today.getMonth() + 1).padStart(2, "0");
+
+        let todayDOB = `${day}-${month}`;
+
+        // todayDOB = "28-12"
+
+      
+
+        if (typeof students !== "undefined") {
+
+            const birthdayStudents = students.filter(s =>
+                s.dob && s.dob.substring(0, 5) === todayDOB
+            );
+
+            if (birthdayStudents.length > 0) {
+                const randomGif = birthdayGifs[Math.floor(Math.random() * birthdayGifs.length)];
+
+                document.getElementById("birthdayGif").src = randomGif;
+
+                birthdayName.textContent =
+                    birthdayStudents.map(s => s.name).join(", ");
+
+                birthdayPopup.style.display = "flex";
+            }
+
+        }
+
+        closePopup.onclick = function () {
+
+            birthdayPopup.style.display = "none";
+
+        };
+
+
+
+
+
+    </script>
 
 </body>
 

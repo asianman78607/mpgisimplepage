@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Profile</title>
+
+    <link rel="icon" href="/resources/mgpi-logo.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Poppins, sans-serif;
+        }
+
+        body {
+
+            background:
+                linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .55)),
+                url("back.jpg");
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+            min-height: 100vh;
+
+        }
+
+        #head {
+
+            width: 95%;
+            margin: 20px auto;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 25px;
+
+            border-radius: 15px;
+
+            background: rgba(255, 255, 255, .92);
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+
+        }
+
+        #head h2 {
+
+            color: #1565c0;
+
+        }
+
+        .btn {
+
+            border: none;
+
+            padding: 10px 18px;
+
+            border-radius: 8px;
+
+            background: #1565c0;
+
+            color: white;
+
+            cursor: pointer;
+
+            font-weight: 600;
+
+            transition: .25s;
+
+            margin-left: 10px;
+
+        }
+
+        .btn:hover {
+
+            background: #ff9800;
+            color: black;
+
+        }
+
+        .container {
+
+            width: 95%;
+            max-width: 1000px;
+
+            margin: auto;
+
+            background: rgba(255, 255, 255, .12);
+
+            backdrop-filter: blur(12px);
+
+            border-radius: 18px;
+
+            padding: 30px;
+
+            color: white;
+
+        }
+
+        .profile {
+
+            text-align: center;
+
+            margin-bottom: 30px;
+
+        }
+
+        .avatar {
+
+            width: 100px;
+            height: 100px;
+
+            border-radius: 50%;
+
+            background: #1565c0;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            font-size: 45px;
+
+            margin: auto;
+
+            margin-bottom: 15px;
+
+        }
+
+        .profile h1 {
+
+            font-size: 30px;
+
+        }
+
+        .roll {
+
+            color: #ffd166;
+
+            margin-top: 8px;
+
+        }
+
+        .cards {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+            gap: 20px;
+
+        }
+
+        .card {
+
+            background: white;
+
+            color: #222;
+
+            border-radius: 15px;
+
+            padding: 20px;
+
+            transition: .25s;
+
+        }
+
+        .card:hover {
+
+            transform: translateY(-3px);
+
+            border: 2px solid #ff9800;
+
+        }
+
+        .card h3 {
+
+            color: #1565c0;
+
+            margin-bottom: 15px;
+
+            border-bottom: 2px solid #eee;
+
+            padding-bottom: 8px;
+
+        }
+
+        .row {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            margin: 10px 0;
+
+        }
+
+        .label {
+
+            color: #666;
+
+        }
+
+        .value {
+
+            font-weight: 600;
+
+        }
+
+        .cg {
+
+            color: green;
+
+            font-weight: bold;
+
+        }
+
+        @media(max-width:700px) {
+
+            #head {
+
+                flex-direction: column;
+
+                gap: 15px;
+
+                text-align: center;
+
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="head">
+        <div> <button class="btn" onclick="history.back()">
+
+                ← Back
+
+            </button>
+            <button class="btn" onclick="location.href='index.html'">
+
+                🏠 Home
+
+            </button>
+
+
+
+
+        </div>
+        <h2>🎓 Student Profile</h2>
+
+
+
+    </div>
+
+    <div class="container">
+
+        <div class="profile">
+
+            <div class="avatar">👤</div>
+
+            <h1 id="name"></h1>
+
+            <div class="roll" id="roll"></div>
+
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>👤 Personal Information</h3>
+
+                <div class="row"><span class="label">Gender</span><span class="value" id="gender"></span></div>
+
+                <div class="row"><span class="label">Phone</span><span class="value" id="phone"></span></div>
+
+                <div class="row"><span class="label">DOB</span><span class="value" id="dob"></span></div>
+
+                <div class="row"><span class="label">Medium</span><span class="value" id="medium"></span></div>
+
+            </div>
+
+            <div class="card">
+
+                <h3>🎓 Academic</h3>
+
+                <div class="row"><span class="label">10%</span><span class="value" id="ten"></span></div>
+
+                <div class="row"><span class="label">10 Board</span><span class="value" id="tenBoard"></span></div>
+
+                <div class="row"><span class="label">12%</span><span class="value" id="twelve"></span></div>
+
+                <div class="row"><span class="label">12 Board</span><span class="value" id="twelveBoard"></span></div>
+
+            </div>
+
+            <div class="card">
+
+                <h3>🏫 Graduation</h3>
+
+                <div class="row"><span class="label">Course</span><span class="value" id="course"></span></div>
+
+                <div class="row"><span class="label">Percentage</span><span class="value" id="grad"></span></div>
+
+                <div class="row"><span class="label">University</span><span class="value" id="uni"></span></div>
+
+            </div>
+
+            <div class="card">
+
+                <h3>📈 MCA Performance</h3>
+
+                <div class="row"><span class="label">Semester-I</span><span class="cg" id="cg1"></span></div>
+
+                <div class="row"><span class="label">Semester-II</span><span class="cg" id="cg2"></span></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="studentdetails.js"></script>
+
+    <script>
+
+        const id = new URLSearchParams(location.search).get("id");
+
+        const student = students.find(s => String(s.rollNo) === id);
+
+        if (!student) {
+
+            document.body.innerHTML = "<h1 style='color:white;text-align:center;margin-top:80px;'>Student Not Found</h1>";
+
+        }
+
+        else {
+
+            name.innerText = student.name;
+
+            roll.innerText = "Roll No : " + student.rollNo;
+
+            gender.innerText = student.gender;
+
+            phone.innerText = student.phone;
+
+            dob.innerText = student.dob ? student.dob : "Not Shared";
+
+            medium.innerText = student.medium;
+
+            ten.innerText = student.tenthPercentage;
+
+            tenBoard.innerText = student.tenthBoard;
+
+            twelve.innerText = student.interPercentage;
+
+            twelveBoard.innerText = student.interBoard;
+
+            course.innerText = student.course;
+
+            grad.innerText = student.graduationPercentage;
+
+            uni.innerText = student.university;
+
+            cg1.innerText = student.cgpa1;
+
+            cg2.innerText = student.cgpa2;
+
+        }
+
+    </script>
+
+</body>
+
+</html>
